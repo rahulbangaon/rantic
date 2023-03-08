@@ -1,0 +1,267 @@
+/* ------------------- */
+/* custom properties */
+/* ------------------- */
+
+:root{
+    /* colors */
+    --dark-blue: #242582;
+    --light-blue: #2f2fa2;
+    --dark-accent: #f64c32;
+    --light-accent: #99738e;
+    --light: #EDF5E1;
+
+    /* font-sizes */
+    
+    
+    /* font-families */
+    
+}
+
+/* colors */
+.dark-blue{ color: var(--dark-blue)}
+.light-blue{ color: var(--light-blue)}
+.dark-accent{ color: var(--dark-accent)}
+.light-accent{ color: var(--light-accent)}
+.white{ color: var(--light)}
+
+.bg-dark-blue{ background-color: var(--dark-blue)}
+.bg-light-blue{ background-color: var(--light-blue)}
+.bg-dark-accent{ background-color: var(--dark-accent)}
+.bg-light-accent{ color: var(--light-accent)}
+.bg-white{ background-color: var(--light)}
+
+/* box-sizing */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    outline: none;
+}
+/* Reset Margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+picture,
+figure{
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+.flex{
+    display: flex;
+}
+
+.flow > *+*{                                                      /* same as .flow > *:not(:first-child) */
+    margin-top: var(--flow-space,1rem);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+/* ------------------- */
+/*   general  styling  */
+/* ------------------- */
+
+body{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: var(--light);
+    padding: 30px;
+}
+
+.container{
+    height: 100vh;
+}
+
+h1{
+    font-family: 'Climate Crisis', cursive;
+    padding-bottom: 30px;
+}
+
+
+/* ------------------- */
+/*   homepage styling  */
+/* ------------------- */
+
+
+.flex--home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* forms */
+
+form{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    
+}
+
+form input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid var(--dark-accent);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0 8px;
+    outline: none;
+
+}
+
+form label{
+    color: var(--light);
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    transition: top .3s;
+    padding: 0 9px;
+    color: var(--light);
+}
+
+form input:focus ~ label,
+form input:hover ~ label{
+    top: -9px;
+    background-color: var(--dark-blue);
+
+}
+.afterHover{
+    top: -9px;
+    background-color: var(--dark-blue);
+}
+
+a{
+    text-decoration: none;
+}
+.start-btn{
+    padding: 0 1.3em;
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    margin: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: inline-grid;
+    place-items: center;
+    position: relative;
+
+}
+
+.start-btn::after{
+    content: '';
+    background-color: var(--light-accent);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+.start-btn:hover::after,
+.start-btn:focus::after{
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.rules{
+    width: 95%;
+}
+
+/* ------------------- */
+/*  game-page styling  */
+/* ------------------- */
+
+
+.grid{
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 95%;
+    aspect-ratio: 1;
+
+}
+
+
+/* game page */
+
+.score h2{
+    grid-area: heading;
+}
+.score .player-1{
+    grid-area: p1;
+}
+.score .player-2{
+    grid-area: p2;
+}
+
+.score{
+    place-items: center;
+    height: 150px;
+    width: 300px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "heading heading"
+                         "p1 p2";
+}
+
+.box{
+    border: 2px solid var(--dark-accent);
+    /* width: 100px; */
+    aspect-ratio: 1;
+}
+
+.border-top{
+    border-top: none;
+}
+.border-bottom{
+    border-bottom: none;
+}
+.border-left{
+    border-left: none;
+}
+.border-right{
+    border-right: none;
+}
+
+button{
+    border: none;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+
+picture img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
