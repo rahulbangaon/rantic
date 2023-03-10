@@ -5,9 +5,17 @@ const secondPlayer = localStorage.getItem("second-player");
 const nameFirstPlayer = document.querySelector("#nameFirstPlayer");
 const nameSecondPlayer = document.querySelector("#nameSecondPlayer");
 
-
+if(firstPlayer===""){
+    nameFirstPlayer.textContent = "Player 1";
+}else{
 nameFirstPlayer.textContent = firstPlayer;
-nameSecondPlayer.textContent = secondPlayer;
+}
+
+if(secondPlayer===""){
+    nameSecondPlayer.textContent = "Player 2";
+}else{
+    nameSecondPlayer.textContent = secondPlayer;
+}
 
 
 // game logic
@@ -24,7 +32,17 @@ let turn = "1";
 
 // function to change turn off player
 function changeTurn(){
+    const indicators = document.querySelectorAll(".turn-indicator");
+    Array.from(indicators).forEach(indicator =>{
+        if(indicator.hasAttribute("hidden")){
+            indicator.removeAttribute("hidden");
+        }
+        else{
+            indicator.hidden="true"
+        }
+    });
     return turn==="1"?"2":"1";
+
 }
 
 
@@ -36,7 +54,6 @@ Array.from(boxes).forEach(box =>{
             let num = randomNum();
             const imagePlayer1 = box.querySelector("#player1-image");
             const imagePlayer2 = box.querySelector("#player2-image");
-            console.log(num);
             if(num%2!==0){
                 imagePlayer1.removeAttribute("hidden");
                 boxText.textContent="1";
@@ -45,8 +62,8 @@ Array.from(boxes).forEach(box =>{
                 imagePlayer2.removeAttribute("hidden");
                 boxText.textContent="2";
             }
-            turn = changeTurn();
             winCheck();
+            turn = changeTurn();
         }
     });
 })
@@ -72,11 +89,11 @@ function winCheck(){
     ];
     wins.forEach(e=>{
         if( (boxText[e[0]].innerText)===(boxText[e[1]].innerText) && (boxText[e[1]].innerText)===(boxText[e[2]].innerText) && (boxText[e[0]].innerText)!==""){
-            if(boxText[e[0]].innerText==="1"){
+            if(turn==="1"){
                 score1++;
                 scoreEl1.textContent = score1;
             }
-            else if(boxText[e[0]].innerText==="2"){
+            else if(turn==="2"){
                 score2++;
                 scoreEl2.textContent = score2;
             }
@@ -89,7 +106,7 @@ function winCheck(){
 function stop(){
     Array.from(boxes).forEach(box =>{
         let boxText = box.querySelector(".boxText");
-        boxText.textContent ="-";
+        boxText.textContent ="";
     });
 }
 
@@ -109,7 +126,7 @@ function reset(){
         else if(boxText.textContent==="2"){
             imagePlayer2.hidden = "true";
         }
-        else if(boxText.textContent==="-"){
+        else if(boxText.textContent===""){
             imagePlayer1.hidden="true";
             imagePlayer2.hidden="true";
         }

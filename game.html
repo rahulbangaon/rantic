@@ -8,21 +8,29 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
 </head>
 <body class="bg-dark-blue">
     <div class="container ">
-        <h1 class="">RanTic</h1>
+        <h1 class="white">Ran<span class="dark-accent">T</span>ic</h1>
         <!-- score -->
-        <div class="score grid">
+        <div class="score grid flow">
             <h2>Score</h2>
             <div class="player-1 flow">
+                <picture>
+                    <img class="turn-indicator" src="images/turnOn.png" alt="Green Light">
+                    <img class="turn-indicator" src="images/turnOff.png" alt="Red Light" hidden>
+                </picture>
                 <h3 id="nameFirstPlayer">Player 1</h2>
                 <p id="score1">0</p>
             </div>
             <div class="player-2 flow">
+                <picture>
+                    <img class="turn-indicator" src="images/turnOn.png" alt="Green Light" hidden>
+                    <img class="turn-indicator" src="images/turnOff.png" alt="Red Light">
+                </picture>
                 <h3 id="nameSecondPlayer">Player 2</h2>
                 <p id="score2">0</p>
             </div>
@@ -32,48 +40,48 @@
         <!-- game area -->
         <div class="game-area grid bg-white dark-accent">
             <div class="box box-1 border-top border-left">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-2 border-top">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-3 border-top border-right">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-4 border-left">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-5">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-6 border-right">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-7 border-bottom border-left">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-8 border-bottom">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
             <div class="box box-9 border-bottom border-right">
-                <picture id="player1-image" hidden ><img src="images/player1.jpg" alt="player1-Image"></picture>
-                <picture id="player2-image" hidden ><img src="images/player2.jpg" alt="player2-Image"></picture>
+                <picture id="player1-image" hidden ><img src="images/player1.png" alt="player1-Image"></picture>
+                <picture id="player2-image" hidden ><img src="images/player2.png" alt="player2-Image"></picture>
                 <span class="boxText sr-only"></span>
             </div>
         </div>
