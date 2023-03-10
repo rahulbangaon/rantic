@@ -106,7 +106,9 @@ function winCheck(){
 function stop(){
     Array.from(boxes).forEach(box =>{
         let boxText = box.querySelector(".boxText");
-        boxText.textContent ="";
+        if(boxText.innerText===""){
+            boxText.textContent = "-";
+        }
     });
 }
 
@@ -126,7 +128,7 @@ function reset(){
         else if(boxText.textContent==="2"){
             imagePlayer2.hidden = "true";
         }
-        else if(boxText.textContent===""){
+        else if(boxText.textContent==="-"){
             imagePlayer1.hidden="true";
             imagePlayer2.hidden="true";
         }
