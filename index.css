@@ -71,6 +71,10 @@ p {
     margin-top: var(--flow-space,1rem);
 }
 
+.hide{
+    display: none !important;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -205,8 +209,54 @@ a{
     grid-template-columns: 1fr 1fr 1fr;
     width: 95%;
     aspect-ratio: 1;
-
 }
+
+.player-1-won{
+    margin: 30px auto;
+    width: 95%;
+    aspect-ratio: 1;
+    background-color: var(--light);
+    background-image: url(images/player1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.player-2-won{
+    margin: 30px auto;
+    width: 95%;
+    aspect-ratio: 1;
+    background-color: var(--light);
+    background-image: url(images/player2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* full image for after won */
+/* .game-area::after{
+    content: '';
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: var(--light);
+    background-image: url(images/player1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+.game-area::before{
+    content: '';
+    width: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: var(--light);
+    background-image: url(images/player2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+} */
 
 
 /* game page */
@@ -225,6 +275,7 @@ a{
 }
 
 .score{
+    display: grid;
     max-height: 100px;
     place-items: center;
     max-width: 100%;

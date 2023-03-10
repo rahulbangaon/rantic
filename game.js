@@ -21,6 +21,11 @@ if(secondPlayer===""){
 // game logic
 
 // score section
+
+// game area and winner picture
+const winnerImage = document.querySelector("#winner-image");
+const gameArea = document.querySelector("#game-area");
+
 let score1 = 0;
 let score2 = 0;
 // getting score element from DOM
@@ -98,6 +103,13 @@ function winCheck(){
                 scoreEl2.textContent = score2;
             }
             resetBtn.textContent = "Play Again!";
+            if(boxText[e[0]].innerText=="1"){
+                winnerImage.classList.add("player-1-won");
+                gameArea.classList.add("hide");
+            }else{
+                winnerImage.classList.add("player-2-won");
+                gameArea.classList.add("hide");
+            }
             stop();
         }
     })
@@ -134,6 +146,9 @@ function reset(){
         }
         boxText.textContent = "";
     });
+    // hiding winner image
+    winnerImage.removeAttribute("class")
+    gameArea.classList.remove("hide");
     // changing play again to reset 
     resetBtn.textContent= "Reset";
 }
